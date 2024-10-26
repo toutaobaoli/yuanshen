@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  .video-container {
+
+    position: relative;
+
+
+    width: 100vw; /* 视口宽度 */
+
+
+    height: 100vh; /* 视口高度 */
+
+
+    overflow: hidden;
+ 
+
+}
+
+
+.video-container video {
+
+
+    position: absolute;
+
+
+    top: 50%;
+
+
+    left: 50%;
+
+
+    transform: translate(-50%, -50%) rotate(90deg); /* 旋转视频 */
+
+
+    width: 100vh; /* 视频宽度设置为视口高度 */
+
+
+    height: 100vw; /* 视频高度设置为视口宽度 */
+
+ display: none;
+}
+.dian{
+  text-align: center;
+  position: absolute;
+  background-color: black;
+  margin-top: -150%;
+ margin-left: 25%;
+  width: 50%;
+  height: 100px;
+}
+  </style>
+<body>
+ <div class="video-container">
+    <video controls id="v" >
+        <source src="../petal_20230801_233451.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<audio src="../qidong.mp4" id="a">
+  </audio>
+  <div class="dian" id="b">
+   <button type="submit" onclick="fang()" >点击有惊喜</button>
+  </div>
+  <script>
+    let v=document.getElementById('v');
+    let a=document.getElementById('a');
+    let b=document.getElementById('b');
+    console.log(b);
+    function fang(){
+      v.style.display='inline-block';
+      v.play();
+      a.play();
+      b.style.display='none';
+    }
+  </script>
+</body>
+
+</html>
